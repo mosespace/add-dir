@@ -3,6 +3,8 @@ import "@/styles/globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Inter as FontSans } from "next/font/google";
 import { cn } from "@/lib/utils";
+import Footer from "@/components/footer";
+import { ModeToggle } from "@/components/mode-toggle";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -33,7 +35,11 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <div className='flex py-2 justify-center mx-auto'>
+            <ModeToggle />
+          </div>
           {children}
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
